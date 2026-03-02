@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crop Solutions | Altiga Agri Solutions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-icon"><img src="images/Logo/altiga.png" alt="Altiga Logo"></div>
+      <div class="nav-logo-text"><span class="nav-logo-main">Altiga Agri</span><span class="nav-logo-sub">Solutions (Pvt.) Ltd</span></div>
+    </a>
+    <button class="nav-toggle" id="navToggle"><i class="fas fa-bars"></i></button>
+    <ul class="nav-menu" id="navMenu">
+      <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+      <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+      <li class="nav-item dropdown">
+        <a href="products.html" class="nav-link">Products <i class="fas fa-chevron-down chevron"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="products.html?category=insecticides"><i class="fas fa-bug"></i>Insecticides</a></li>
+          <li><a href="products.html?category=fungicides"><i class="fas fa-leaf"></i>Fungicides</a></li>
+          <li><a href="products.html?category=weedicides"><i class="fas fa-seedling"></i>Weedicides</a></li>
+          <li><a href="products.html?category=fertilizers"><i class="fas fa-flask"></i>Fertilizers</a></li>
+          <li><a href="products.html?category=micronutrients"><i class="fas fa-atom"></i>Micronutrients</a></li>
+          <li><a href="products.html?category=adjuvants"><i class="fas fa-vial"></i>Adjuvants</a></li>
+        </ul>
+      </li>
+      <li class="nav-item"><a href="crops.html" class="nav-link active">Crop Solutions</a></li>
+      <li class="nav-item"><a href="dealers.html" class="nav-link">Dealer Locator</a></li>
+      <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="page-header">
+  <div class="page-header-inner">
+    <span class="page-tag">Tailored Guidance</span>
+    <h1>Crop-Specific Solutions</h1>
+    <p>Expert product recommendations, integrated pest management, and best practices for Pakistan's major crops</p>
+    <nav class="breadcrumb"><a href="index.html">Home</a> <i class="fas fa-chevron-right"></i> <span>Crop Solutions</span></nav>
+  </div>
+</section>
+
+<!-- FILTER BAR -->
+<div class="crop-filter-bar">
+  <div class="crop-filter-inner" id="cropFilterBar">
+    <button class="crop-pill active" data-crop="all">🌿 All Crops</button>
+    <button class="crop-pill" data-crop="wheat">🌾 Wheat</button>
+    <button class="crop-pill" data-crop="cotton">🌱 Cotton</button>
+    <button class="crop-pill" data-crop="rice">🌾 Rice</button>
+    <button class="crop-pill" data-crop="potato">🥔 Potato</button>
+    <button class="crop-pill" data-crop="vegetables">🥦 Vegetables</button>
+    <button class="crop-pill" data-crop="apple">🍎 Apple</button>
+    <button class="crop-pill" data-crop="grapes">🍇 Grapes</button>
+    <button class="crop-pill" data-crop="pomegranate">🌿 Pomegranate</button>
+  </div>
+</div>
+
+<div style="padding:3rem 0 5rem;">
+  <div class="container">
+    <div class="crops-grid" id="cropsGrid"></div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="nav-logo" style="margin-bottom:.75rem;display:inline-flex;">
+          <div class="nav-logo-icon"><img src="images/Logo/altiga.png" alt="Altiga"></div>
+          <div class="nav-logo-text"><span class="nav-logo-main">Altiga Agri</span><span class="nav-logo-sub">Solutions (Pvt.) Ltd</span></div>
+        </a>
+        <p class="footer-brand-desc">Leading Pakistan's agricultural transformation with innovative, high-quality crop protection solutions.</p>
+        <div class="footer-social">
+          <a href="https://wa.me/923058366461" target="_blank"><i class="fab fa-whatsapp"></i></a>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="crops.html">Crop Solutions</a></li>
+          <li><a href="dealers.html">Dealer Locator</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Products</h4>
+        <ul>
+          <li><a href="products.html?category=insecticides">Insecticides</a></li>
+          <li><a href="products.html?category=fungicides">Fungicides</a></li>
+          <li><a href="products.html?category=weedicides">Weedicides</a></li>
+          <li><a href="products.html?category=fertilizers">Fertilizers</a></li>
+          <li><a href="products.html?category=micronutrients">Micronutrients</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Info</h4>
+        <div class="footer-contact-list">
+          <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>Eastern Bypass Industrial Zone, Quetta, Balochistan</span></div>
+          <div class="footer-contact-item"><i class="fas fa-phone"></i><span><a href="tel:+923058366461">+92 305 8366461</a></span></div>
+          <div class="footer-contact-item"><i class="fas fa-envelope"></i><span><a href="mailto:altigaagrisolutionsqta@gmail.com">altigaagrisolutionsqta@gmail.com</a></span></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Altiga Agri Solutions (Pvt.) Ltd. All rights reserved.</p>
+      <div class="footer-bottom-links"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="components.js"></script>
+<script>
+// NAV
+const toggle = document.getElementById('navToggle');
+const menu   = document.getElementById('navMenu');
+toggle.addEventListener('click', () => {
+  menu.classList.toggle('open');
+  toggle.innerHTML = menu.classList.contains('open') ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+});
+document.querySelectorAll('.nav-item.dropdown .nav-link').forEach(link => {
+  link.addEventListener('click', e => {
+    if (window.innerWidth <= 880) { e.preventDefault(); link.closest('.nav-item').classList.toggle('open'); }
+  });
+});
+document.addEventListener('click', e => {
+  if (!e.target.closest('.navbar')) { menu.classList.remove('open'); toggle.innerHTML = '<i class="fas fa-bars"></i>'; }
+});
+
+const cropsData = [
+  {
+    id: 'wheat', name: 'Wheat', emoji: '🌾',
+    img: 'images/CROPS/Wheat/images.jpg',
+    badge: 'National Staple',
+    subtitle: 'Triticum aestivum',
+    icon: 'fa-wheat-awn',
+    seasons: ['🌱 Rabi Crop', '📅 Oct – Nov Sowing', '🌾 Apr – May Harvest'],
+    summary: 'Wheat is Pakistan\'s most important cereal crop. Our solutions target key diseases like rust, powdery mildew, and weeds that cause significant yield losses.',
+    pests: [
+      { name: 'Yellow Rust', products: ['Eminent-XL', 'Evole', 'Duo-Blast'] },
+      { name: 'Powdery Mildew', products: ['Evole', 'Castra', 'Sulfultra'] },
+      { name: 'Aphids', products: ['Custodian', 'Top Gun', 'Ally'] },
+      { name: 'Armyworm', products: ['Monarca', 'Lufox', 'Chloral'] },
+    ],
+    diseases: [
+      { name: 'Loose Smut', products: ['Castra', 'Eminent-XL'] },
+      { name: 'Foot Rot', products: ['Castra', 'Metrabin'] },
+    ],
+    nutrition: [
+      { name: 'NPK Deficiency', products: ['Sangral 15-17-18', 'Sangral High-N'] },
+      { name: 'Zinc Deficiency', products: ['Sangral Zn', 'Armonika'] },
+    ],
+    weed: [
+      { name: 'Broadleaf Weeds', products: ['Tonale', 'Tri-Ultra'] },
+    ],
+    practices: [
+      'Apply seed treatment with Castra before sowing for smut control',
+      'Monitor for rust symptoms from tillering stage onwards',
+      'Apply nitrogen top-dress at tillering for maximum yield',
+      'Use Sangral High-K at grain-filling stage for quality improvement',
+      'Scout fields weekly during critical growth stages',
+    ]
+  },
+  {
+    id: 'cotton', name: 'Cotton', emoji: '🌱',
+    img: 'images/CROPS/Cotton/Cotton.jpg',
+    badge: 'Cash Crop',
+    subtitle: 'Gossypium hirsutum',
+    icon: 'fa-cloud',
+    seasons: ['🌱 Kharif Crop', '📅 Apr – May Sowing', '🌾 Oct – Dec Harvest'],
+    summary: 'Cotton is Pakistan\'s most valuable cash crop. Our comprehensive range targets the major pests like Bollworms, Whitefly, and Jassids that threaten yield and fiber quality.',
+    pests: [
+      { name: 'Pink Bollworm', products: ['Lufox', 'Monarca', 'Conquer'] },
+      { name: 'Whitefly', products: ['Combipro', 'Bispiro', 'Bazuka'] },
+      { name: 'Jassids', products: ['Custodian', 'Legacy', 'Ally'] },
+      { name: 'Thrips', products: ['Revenant', 'Synkill', 'Top Gun'] },
+    ],
+    diseases: [
+      { name: 'Alternaria Leaf Spot', products: ['Evole', 'Duo-Blast'] },
+      { name: 'Cotton Wilt', products: ['Castra', 'Metrabin'] },
+    ],
+    nutrition: [
+      { name: 'Potassium Deficiency', products: ['Sangral Mix 14-4-42', 'Cotin-K', 'Sangral High-K'] },
+      { name: 'Micronutrient Deficiency', products: ['Armonika', 'Sangral Zn'] },
+    ],
+    weed: [
+      { name: 'Grassy Weeds', products: ['Matilda'] },
+    ],
+    practices: [
+      'Rotate insecticides with different modes of action to prevent resistance',
+      'Use pheromone traps for early monitoring of Bollworm',
+      'Apply potassium during boll development for better fiber quality',
+      'Maintain proper canopy management for better spray penetration',
+      'Scout at least twice per week during pest season',
+    ]
+  },
+  {
+    id: 'rice', name: 'Rice / Paddy', emoji: '🌾',
+    img: 'images/CROPS/RIce/Rice.jpg',
+    badge: 'Basmati Quality',
+    subtitle: 'Oryza sativa',
+    icon: 'fa-water',
+    seasons: ['🌱 Kharif Crop', '📅 May – Jun Transplant', '🌾 Sep – Nov Harvest'],
+    summary: 'Pakistan is renowned for its aromatic Basmati rice. Protect your crop from Stem Borer, Blast, and Sheath Blight to achieve premium export-quality yields.',
+    pests: [
+      { name: 'Stem Borer', products: ['Fixor', 'Fixor Super', 'Chloral'] },
+      { name: 'Leaf Folder', products: ['Lufox', 'Fixor', 'Synkill'] },
+      { name: 'Brown Plant Hopper', products: ['Custodian', 'Magicate'] },
+      { name: 'Gall Midge', products: ['Fixor', 'Chloral'] },
+    ],
+    diseases: [
+      { name: 'Blast Disease', products: ['Vindra', 'Castra', 'Evole'] },
+      { name: 'Sheath Blight', products: ['Vindra', 'Duo-Blast'] },
+      { name: 'Brown Spot', products: ['Vindra', 'Aquasorb'] },
+    ],
+    nutrition: [
+      { name: 'Nitrogen Deficiency', products: ['Sangral High-N', 'Sangral Urea Phosphate'] },
+      { name: 'Zinc Deficiency', products: ['Sangral Zn', 'Armonika'] },
+    ],
+    weed: [
+      { name: 'Weedy Rice / Grasses', products: ['Tonale', 'Matilda'] },
+    ],
+    practices: [
+      'Practice seed priming with zinc sulphate before transplanting',
+      'Maintain proper water management to minimize blast risk',
+      'Apply nitrogen in splits: 50% basal, 25% tillering, 25% panicle initiation',
+      'Scout paddy fields weekly after transplanting for early pest detection',
+    ]
+  },
+  {
+    id: 'potato', name: 'Potato', emoji: '🥔',
+    img: 'images/CROPS/potato/potato.jpg',
+    badge: 'High Value',
+    subtitle: 'Solanum tuberosum',
+    icon: 'fa-circle',
+    seasons: ['🌱 Rabi Crop', '📅 Oct – Nov Sowing', '🌾 Jan – Mar Harvest'],
+    summary: 'Potato is a high-value vegetable crop in Pakistan. Late Blight and Early Blight are the most destructive diseases. Our fungicide portfolio provides comprehensive protection.',
+    pests: [
+      { name: 'Aphids (Virus Vector)', products: ['Custodian', 'Bazuka', 'Top Gun'] },
+      { name: 'Potato Tuber Moth', products: ['Lufox', 'Monarca'] },
+    ],
+    diseases: [
+      { name: 'Late Blight', products: ['Metrabin', 'Aquasorb', 'Duo-Blast'] },
+      { name: 'Early Blight', products: ['Aquasorb', 'Evole'] },
+      { name: 'Common Scab', products: ['Castra', 'Evole'] },
+    ],
+    nutrition: [
+      { name: 'Calcium Deficiency', products: ['Oro-Cal', 'Basfoliar'] },
+      { name: 'Potassium Deficiency', products: ['Sangral Potassium Sulphate', 'Cotin-K'] },
+    ],
+    weed: [],
+    practices: [
+      'Begin fungicide program preventively before symptoms appear',
+      'Apply Metrabin at 7-10 day intervals during high disease pressure',
+      'Use certified disease-free seed tubers for planting',
+      'Apply Oro-Cal for calcium correction to prevent internal browning',
+      'Ensure proper hilling to protect tubers from light and frost',
+    ]
+  },
+  {
+    id: 'vegetables', name: 'Vegetables', emoji: '🥦',
+    img: 'images/CROPS/Vegetables/vegetables.jpg',
+    badge: 'Year-Round',
+    subtitle: 'Multiple Crops',
+    icon: 'fa-carrot',
+    seasons: ['🌱 Year-Round Production', '📅 Multiple Cropping Seasons'],
+    summary: 'Pakistan\'s diverse vegetable sector demands flexible crop protection solutions. Our range covers all major pests and diseases across tomato, chilli, onion, cucumber, and more.',
+    pests: [
+      { name: 'Whitefly', products: ['Bispiro', 'Combipro', 'Bazuka'] },
+      { name: 'Thrips', products: ['Revenant', 'Magicate', 'Ozone'] },
+      { name: 'Caterpillars', products: ['Monarca', 'Conquer', 'Lufox'] },
+      { name: 'Spider Mites', products: ['Emento', 'Curiosity', 'Revenant'] },
+    ],
+    diseases: [
+      { name: 'Powdery Mildew', products: ['Evole', 'Sulfultra'] },
+      { name: 'Downy Mildew', products: ['Metrabin', 'Aquasorb'] },
+      { name: 'Fusarium Wilt', products: ['Castra', 'Evole'] },
+    ],
+    nutrition: [
+      { name: 'Boron Deficiency', products: ['Borofix', 'Boronium', 'Basfoliar'] },
+      { name: 'Calcium Deficiency', products: ['Oro-Cal', 'Sangral CXK New'] },
+    ],
+    weed: [
+      { name: 'Broadleaf Weeds', products: ['Matilda'] },
+    ],
+    practices: [
+      'Use Ozone (bio-organic) for caterpillar control in export vegetables',
+      'Apply Borofix during flower initiation for better fruit set',
+      'Rotate fungicides to prevent resistance in powdery mildew',
+      'Use Vintre adjuvant to improve spray efficacy and coverage',
+      'Apply Oro-Cal to prevent blossom end rot in tomatoes',
+    ]
+  },
+  {
+    id: 'apple', name: 'Apple', emoji: '🍎',
+    img: 'images/CROPS/Apple/apple.jpg',
+    badge: 'Export Quality',
+    subtitle: 'Malus domestica',
+    icon: 'fa-apple-alt',
+    seasons: ['🌸 Spring Bloom', '📅 Mar – Apr Flowering', '🍎 Aug – Oct Harvest'],
+    summary: 'Apple orchards in Balochistan and KPK face significant pressure from Codling Moth, Scab, and Powdery Mildew. Our orchard program delivers export-standard fruit quality.',
+    pests: [
+      { name: 'Codling Moth', products: ['Lufox', 'Ozone', 'Revenant'] },
+      { name: 'Wooly Apple Aphid', products: ['Bispiro', 'Custodian'] },
+      { name: 'Spider Mites', products: ['Emento', 'Curiosity'] },
+    ],
+    diseases: [
+      { name: 'Apple Scab', products: ['Duo-Blast', 'Eminent-XL', 'Evole'] },
+      { name: 'Powdery Mildew', products: ['Evole', 'Sulfultra'] },
+      { name: 'Fire Blight', products: ['Duo-Blast'] },
+    ],
+    nutrition: [
+      { name: 'Calcium Deficiency', products: ['Oro-Cal', 'Basfoliar'] },
+      { name: 'Boron Deficiency', products: ['Borofix', 'Boronium'] },
+    ],
+    weed: [],
+    practices: [
+      'Begin scab protection at early green tip with Duo-Blast',
+      'Apply Basfoliar at pink bud for better fruit set and size',
+      'Use Codling Moth pheromone traps to time insecticide applications',
+      'Apply Oro-Cal 3-4 times during fruit development to prevent bitter pit',
+      'Thin fruit early to improve size and color of remaining apples',
+    ]
+  },
+  {
+    id: 'grapes', name: 'Grapes', emoji: '🍇',
+    img: 'images/CROPS/Grapes/grapes.jpg',
+    badge: 'Premium Yield',
+    subtitle: 'Vitis vinifera',
+    icon: 'fa-wine-glass',
+    seasons: ['🌸 Spring Shoot', '📅 Apr – Jun Veraison', '🍇 Aug – Oct Harvest'],
+    summary: 'Grape cultivation in Balochistan requires intensive disease management. Powdery and Downy Mildew can devastate yields. Early and consistent fungicide programs are essential.',
+    pests: [
+      { name: 'Grape Berry Moth', products: ['Ozone', 'Lufox'] },
+      { name: 'Mealybug', products: ['Bispiro', 'Curiosity'] },
+    ],
+    diseases: [
+      { name: 'Powdery Mildew', products: ['Evole', 'Sulfultra', 'Duo-Blast'] },
+      { name: 'Downy Mildew', products: ['Metrabin', 'Aquasorb'] },
+      { name: 'Botrytis Bunch Rot', products: ['Vindra', 'Duo-Blast'] },
+    ],
+    nutrition: [
+      { name: 'Potassium Deficiency', products: ['Sangral Potassium Sulphate', 'Sangral High-K'] },
+      { name: 'Boron Deficiency', products: ['Borofix', 'Basfoliar'] },
+    ],
+    weed: [],
+    practices: [
+      'Begin mildew program at 3-4 leaf stage before symptoms appear',
+      'Alternate Evole with Sulfultra for resistance management',
+      'Apply potassium from veraison to improve sugar content and color',
+      'Ensure good canopy airflow through proper pruning and tying',
+      'Use Borofix at pre-bloom to improve berry set and reduce shot-berries',
+    ]
+  },
+  {
+    id: 'pomegranate', name: 'Pomegranate', emoji: '🌿',
+    img: 'images/CROPS/Pomegernate/Pomegranate.jpg',
+    badge: 'Export Grade',
+    subtitle: 'Punica granatum',
+    icon: 'fa-circle',
+    seasons: ['🌸 Spring Bloom', '📅 Mar – May Flowering', '🌿 Aug – Nov Harvest'],
+    summary: 'Pomegranate from Balochistan has excellent export potential. Fruit Fly and Heart Rot are the major quality threats. Timely intervention delivers export-grade produce.',
+    pests: [
+      { name: 'Fruit Fly', products: ['Ozone', 'Profen', 'Lufox'] },
+      { name: 'Aphids', products: ['Top Gun', 'Custodian'] },
+    ],
+    diseases: [
+      { name: 'Heart Rot / Aspergillus', products: ['Castra', 'Evole'] },
+      { name: 'Alternaria Fruit Spot', products: ['Duo-Blast', 'Aquasorb'] },
+    ],
+    nutrition: [
+      { name: 'Boron Deficiency', products: ['Boronium', 'Basfoliar'] },
+      { name: 'Calcium Deficiency', products: ['Oro-Cal'] },
+    ],
+    weed: [],
+    practices: [
+      'Use Fruit Fly protein bait traps for monitoring and mass trapping',
+      'Begin fungicide program at petal fall for Heart Rot prevention',
+      'Apply Basfoliar at early fruit development for berry cracking reduction',
+      'Cover fruits with paper bags in premium orchards to prevent pest damage',
+      'Apply Oro-Cal 2-3 times during fruit development for quality improvement',
+    ]
+  },
+];
+
+let expandedCard = null;
+let activeFilter = 'all';
+
+function buildCrops(filter) {
+  const grid = document.getElementById('cropsGrid');
+  const list = filter === 'all' ? cropsData : cropsData.filter(c => c.id === filter);
+  if (expandedCard && !list.find(c => c.id === expandedCard)) expandedCard = null;
+
+  grid.innerHTML = list.map(crop => buildCropCard(crop)).join('');
+}
+
+function buildCropCard(crop) {
+  const isExpanded = expandedCard === crop.id;
+  const pestsHTML = crop.pests.map(p => `
+    <div class="rec-card">
+      <div class="rec-type pest"><i class="fas fa-bug"></i> Pest: ${p.name}</div>
+      <div class="rec-products">${p.products.map(x => `<a href="products.html" class="rec-chip">${x}</a>`).join('')}</div>
+    </div>`).join('');
+
+  const diseasesHTML = crop.diseases.map(d => `
+    <div class="rec-card">
+      <div class="rec-type disease"><i class="fas fa-virus"></i> Disease: ${d.name}</div>
+      <div class="rec-products">${d.products.map(x => `<a href="products.html" class="rec-chip">${x}</a>`).join('')}</div>
+    </div>`).join('');
+
+  const nutritionHTML = crop.nutrition.map(n => `
+    <div class="rec-card">
+      <div class="rec-type nutrition"><i class="fas fa-atom"></i> Nutrition: ${n.name}</div>
+      <div class="rec-products">${n.products.map(x => `<a href="products.html" class="rec-chip">${x}</a>`).join('')}</div>
+    </div>`).join('');
+
+  const weedHTML = crop.weed.map(w => `
+    <div class="rec-card">
+      <div class="rec-type weed"><i class="fas fa-seedling"></i> Weed: ${w.name}</div>
+      <div class="rec-products">${w.products.map(x => `<a href="products.html" class="rec-chip">${x}</a>`).join('')}</div>
+    </div>`).join('');
+
+  const allRecs = pestsHTML + diseasesHTML + nutritionHTML + weedHTML;
+  const practicesHTML = crop.practices.map(p => `<div class="practice-item"><i class="fas fa-check-circle"></i><span>${p}</span></div>`).join('');
+  const seasonsHTML   = crop.seasons.map(s => `<span class="season-chip">${s}</span>`).join('');
+
+  return `<div class="crop-card${isExpanded?' expanded':''}" id="crop-${crop.id}">
+    <div class="crop-thumb" onclick="toggleCrop('${crop.id}')">
+      <img src="${crop.img}" alt="${crop.name}" loading="lazy">
+      <div class="crop-thumb-overlay"></div>
+      <div class="crop-thumb-bottom">
+        <span class="crop-thumb-name">${crop.emoji} ${crop.name}</span>
+        <span class="crop-thumb-badge">${crop.badge}</span>
+      </div>
+    </div>
+    <div class="crop-header" onclick="toggleCrop('${crop.id}')">
+      <div class="crop-header-left">
+        <div class="crop-header-icon"><i class="fas ${crop.icon}"></i></div>
+        <div>
+          <div class="crop-header-name">${crop.name}</div>
+          <div class="crop-header-sub">${crop.subtitle}</div>
+        </div>
+      </div>
+      <div class="crop-expand-btn"><i class="fas fa-plus"></i></div>
+    </div>
+    <div class="crop-seasons">${seasonsHTML}</div>
+    <div class="crop-summary">${crop.summary}</div>
+    <div class="crop-detail">
+      ${allRecs ? `<div class="products-rec">
+        <div class="products-rec-title"><i class="fas fa-flask"></i> Recommended Products & Targets</div>
+        <div class="products-rec-grid">${allRecs}</div>
+      </div>` : ''}
+      <div class="best-practices">
+        <div class="best-practices-title"><i class="fas fa-lightbulb"></i> Best Management Practices</div>
+        <div class="practices-grid">${practicesHTML}</div>
+      </div>
+      <button class="close-detail-btn" onclick="toggleCrop('${crop.id}')"><i class="fas fa-times"></i> Close Details</button>
+    </div>
+  </div>`;
+}
+
+function toggleCrop(id) {
+  if (expandedCard === id) {
+    expandedCard = null;
+  } else {
+    expandedCard = id;
+  }
+  buildCrops(activeFilter);
+  // Scroll to card
+  setTimeout(() => {
+    const el = document.getElementById('crop-' + id);
+    if (el && expandedCard === id) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 50);
+}
+
+// Filter
+document.querySelectorAll('.crop-pill').forEach(pill => {
+  pill.addEventListener('click', () => {
+    document.querySelectorAll('.crop-pill').forEach(p => p.classList.remove('active'));
+    pill.classList.add('active');
+    activeFilter = pill.dataset.crop;
+    expandedCard = null;
+    buildCrops(activeFilter);
+  });
+});
+
+// URL hash
+const hash = window.location.hash.replace('#', '');
+if (hash && cropsData.find(c => c.id === hash)) {
+  activeFilter = hash;
+  expandedCard = hash;
+  document.querySelectorAll('.crop-pill').forEach(p => {
+    p.classList.toggle('active', p.dataset.crop === hash || (hash && p.dataset.crop === 'all' && !cropsData.find(c=>c.id===hash)));
+  });
+  const hashPill = document.querySelector(`.crop-pill[data-crop="${hash}"]`);
+  if (hashPill) { document.querySelectorAll('.crop-pill').forEach(p=>p.classList.remove('active')); hashPill.classList.add('active'); }
+}
+
+buildCrops(activeFilter);
+</script>
+
+<!-- MOBILE BOTTOM NAVIGATION -->
+<nav class="mobile-bottom-nav">
+  <div class="mobile-bottom-nav-inner">
+    <a href="index.html" class="mobile-nav-item" data-page="index">
+      <i class="fas fa-home"></i>
+      <span>Home</span>
+    </a>
+    <a href="products.html" class="mobile-nav-item" data-page="products">
+      <i class="fas fa-flask"></i>
+      <span>Products</span>
+    </a>
+    <a href="crops.html" class="mobile-nav-item" data-page="crops">
+      <i class="fas fa-seedling"></i>
+      <span>Crops</span>
+    </a>
+    <a href="dealers.html" class="mobile-nav-item" data-page="dealers">
+      <i class="fas fa-map-marker-alt"></i>
+      <span>Dealers</span>
+    </a>
+    <a href="contact.html" class="mobile-nav-item" data-page="contact">
+      <i class="fas fa-phone"></i>
+      <span>Contact</span>
+    </a>
+  </div>
+</nav>
+
+<script>
+// Mobile bottom nav active state
+(function() {
+  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  const pageName = currentPage.replace('.html', '') || 'index';
+  document.querySelectorAll('.mobile-nav-item').forEach(item => {
+    if (item.dataset.page === pageName) {
+      item.classList.add('active');
+    }
+  });
+})();
+</script>
+
+</body>
+</html>

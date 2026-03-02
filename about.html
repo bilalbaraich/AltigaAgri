@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | Altiga Agri Solutions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-icon"><img src="images/Logo/altiga.png" alt="Altiga Logo"></div>
+      <div class="nav-logo-text"><span class="nav-logo-main">Altiga Agri</span><span class="nav-logo-sub">Solutions (Pvt.) Ltd</span></div>
+    </a>
+    <button class="nav-toggle" id="navToggle"><i class="fas fa-bars"></i></button>
+    <ul class="nav-menu" id="navMenu">
+      <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+      <li class="nav-item"><a href="about.html" class="nav-link active">About Us</a></li>
+      <li class="nav-item dropdown">
+        <a href="products.html" class="nav-link">Products <i class="fas fa-chevron-down chevron"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="products.html?category=insecticides"><i class="fas fa-bug"></i>Insecticides</a></li>
+          <li><a href="products.html?category=fungicides"><i class="fas fa-leaf"></i>Fungicides</a></li>
+          <li><a href="products.html?category=weedicides"><i class="fas fa-seedling"></i>Weedicides</a></li>
+          <li><a href="products.html?category=fertilizers"><i class="fas fa-flask"></i>Fertilizers</a></li>
+          <li><a href="products.html?category=micronutrients"><i class="fas fa-atom"></i>Micronutrients</a></li>
+          <li><a href="products.html?category=adjuvants"><i class="fas fa-vial"></i>Adjuvants</a></li>
+        </ul>
+      </li>
+      <li class="nav-item"><a href="crops.html" class="nav-link">Crop Solutions</a></li>
+      <li class="nav-item"><a href="dealers.html" class="nav-link">Dealer Locator</a></li>
+      <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="page-header">
+  <div class="page-header-inner">
+    <span class="page-tag">Our Story</span>
+    <h1>About Altiga Agri Solutions</h1>
+    <p>A dynamic, forward-thinking company advancing Pakistan's agriculture through quality, innovation and integrity</p>
+    <nav class="breadcrumb"><a href="index.html">Home</a> <i class="fas fa-chevron-right"></i> <span>About Us</span></nav>
+  </div>
+</section>
+
+<!-- BOARD OF DIRECTORS - GROUP PHOTO -->
+<section class="section board-directors-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag"><i class="fas fa-crown"></i> Leadership</span>
+      <h2 class="section-title">Board of Directors</h2>
+      <p class="section-subtitle">Meet the visionary leaders guiding Altiga Agri Solutions towards agricultural excellence across Pakistan.</p>
+    </div>
+    <div class="group-photo-container animate-on-scroll">
+      <div class="group-photo-wrapper">
+        <img src="images/About Us/group.jpg" alt="Altiga Agri Solutions Board of Directors" class="group-photo">
+        <div class="group-photo-overlay">
+          <div class="group-photo-caption">
+            <h3>Leadership Team 2026</h3>
+            <p>Guiding Pakistan's Agricultural Future</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MANAGEMENT TEAM -->
+<section class="section alt-bg">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag"><i class="fas fa-users"></i> Our Leadership</span>
+      <h2 class="section-title">Meet Our Management Team</h2>
+      <p class="section-subtitle">Experienced leaders driving Altiga Agri Solutions towards agricultural excellence across Pakistan and beyond.</p>
+    </div>
+    <div class="mgmt-grid">
+      <div class="mgmt-card animate-on-scroll" onclick="openMgmt('ceo')" tabindex="0" role="button">
+        <div class="mgmt-avatar ceo-bg" style="overflow:hidden;padding:0;"><img src="images/About Us/CEO.jpg" alt="Barkat Ali Khan - CEO" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;"></div>
+        <div class="mgmt-overlay">
+          <span class="mgmt-role">CEO</span>
+          <h3>Barkat Ali Khan</h3>
+          <div class="mgmt-hint"><i class="fas fa-info-circle"></i> Click to view profile</div>
+        </div>
+      </div>
+      <div class="mgmt-card animate-on-scroll" onclick="openMgmt('md')" tabindex="0" role="button">
+        <div class="mgmt-avatar md-bg" style="overflow:hidden;padding:0;"><img src="images/About Us/Managing Director.jpg" alt="Alam Khan - Managing Director" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;"></div>
+        <div class="mgmt-overlay">
+          <span class="mgmt-role">Managing Director</span>
+          <h3>Alam Khan</h3>
+          <div class="mgmt-hint"><i class="fas fa-info-circle"></i> Click to view profile</div>
+        </div>
+      </div>
+      <div class="mgmt-card animate-on-scroll" onclick="openMgmt('finance')" tabindex="0" role="button">
+        <div class="mgmt-avatar fin-bg" style="overflow:hidden;padding:0;"><img src="images/About Us/Finance Director.jpg" alt="Fayyaz Khan - Finance Director" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;"></div>
+        <div class="mgmt-overlay">
+          <span class="mgmt-role">Finance Director</span>
+          <h3>Fayyaz Khan</h3>
+          <div class="mgmt-hint"><i class="fas fa-info-circle"></i> Click to view profile</div>
+        </div>
+      </div>
+      <div class="mgmt-card animate-on-scroll" onclick="openMgmt('sales')" tabindex="0" role="button">
+        <div class="mgmt-avatar sales-bg" style="overflow:hidden;padding:0;"><img src="images/About Us/Director Sales.jpg" alt="Farrukh Ali Khan - Director Sales & Marketing" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;"></div>
+        <div class="mgmt-overlay">
+          <span class="mgmt-role">Director Sales & Marketing</span>
+          <h3>Farrukh Ali Khan</h3>
+          <div class="mgmt-hint"><i class="fas fa-info-circle"></i> Click to view profile</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MGMT MODAL -->
+<div class="mgmt-modal" id="mgmtModal" onclick="if(event.target===this)closeMgmt()">
+  <div class="mgmt-modal-box">
+    <div class="mgmt-modal-header" id="mgmtModalHeader">
+      <div class="mgmt-modal-avatar" id="mgmtModalAvatar"></div>
+      <div class="mgmt-modal-title">
+        <h2 id="mgmtModalName"></h2>
+        <span style="display:inline-block;background:rgba(255,255,255,0.2);border:1px solid rgba(255,255,255,0.3);color:#fff;font-size:.78rem;font-weight:600;padding:.25rem .85rem;border-radius:50px;" id="mgmtModalRole"></span>
+      </div>
+      <button class="mgmt-modal-close" onclick="closeMgmt()"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="mgmt-modal-body">
+      <p id="mgmtModalBio"></p>
+      <div class="mgmt-meta-list" id="mgmtModalMeta"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT INTRO -->
+<section class="section">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-images animate-on-scroll">
+        <div class="about-img-main">
+          <img src="https://images.unsplash.com/photo-1560493676-04071c5f467b?w=800&q=80" alt="Modern Agriculture" loading="lazy">
+        </div>
+        <div class="about-img-secondary">
+          <img src="https://images.unsplash.com/photo-1595855759920-86582396756a?w=400&q=80" alt="Research Lab" loading="lazy">
+        </div>
+        <div class="about-exp-badge">
+          <span class="years">15+</span>
+          <span class="text">Years of<br>Excellence</span>
+        </div>
+      </div>
+      <div class="animate-on-scroll">
+        <span class="section-tag">Our Story</span>
+        <h2 class="section-title" style="text-align:left;margin-bottom:1rem;">New Roots, Strong Vision for Pakistan's Agriculture</h2>
+        <p style="color:var(--text2);line-height:1.75;margin-bottom:1rem;">Altiga Agri Solutions (Pvt.) Ltd. is a dynamic and forward-thinking company committed to advancing Pakistan's agriculture. Backed by industry expertise and a passion for progress, we deliver high-quality solutions that meet the evolving needs of modern farmers.</p>
+        <p style="color:var(--text2);line-height:1.75;margin-bottom:1.5rem;">Our state-of-the-art formulation and packaging plant specializes in the precise production of SC, EC, and granular pesticides—ensuring high quality and consistency in every product. We place utmost importance on honesty and integrity, building strong trust with Pakistan's farming community.</p>
+        <div class="about-features-list">
+          <div class="about-feature">
+            <div class="about-feature-icon"><i class="fas fa-flask"></i></div>
+            <div class="about-feature-text"><h4>Research & Development</h4><p>Continuous innovation in crop protection technologies</p></div>
+          </div>
+          <div class="about-feature">
+            <div class="about-feature-icon"><i class="fas fa-industry"></i></div>
+            <div class="about-feature-text"><h4>Modern Manufacturing</h4><p>ISO certified state-of-the-art production facilities</p></div>
+          </div>
+          <div class="about-feature">
+            <div class="about-feature-icon"><i class="fas fa-users"></i></div>
+            <div class="about-feature-text"><h4>Expert Team</h4><p>Agricultural specialists and Ph.D. level scientists</p></div>
+          </div>
+          <div class="about-feature">
+            <div class="about-feature-icon"><i class="fas fa-handshake"></i></div>
+            <div class="about-feature-text"><h4>Farmer Support</h4><p>24/7 technical assistance and field consultations</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION VISION VALUES -->
+<section class="section alt-bg">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag"><i class="fas fa-bullseye"></i> Our Foundation</span>
+      <h2 class="section-title">Mission, Vision & Values</h2>
+    </div>
+    <div class="mv-grid">
+      <div class="mv-card animate-on-scroll">
+        <div class="mv-icon"><i class="fas fa-bullseye"></i></div>
+        <h3>Our Mission</h3>
+        <p>To provide innovative, high-quality crop protection solutions that enhance agricultural productivity and sustainability across Pakistan, while maintaining the highest standards of environmental responsibility and farmer satisfaction.</p>
+      </div>
+      <div class="mv-card animate-on-scroll">
+        <div class="mv-icon"><i class="fas fa-eye"></i></div>
+        <h3>Our Vision</h3>
+        <p>To become Pakistan's most trusted partner in agricultural excellence, recognized for our commitment to quality, innovation, and the prosperity of farming communities throughout the nation.</p>
+      </div>
+      <div class="mv-card animate-on-scroll">
+        <div class="mv-icon"><i class="fas fa-heart"></i></div>
+        <h3>Our Values</h3>
+        <p>Integrity, Quality, Innovation, Sustainability, and Farmer-Centricity guide everything we do. We believe in building lasting relationships based on trust and mutual success.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="section-sm">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-card animate-on-scroll">
+        <div class="stat-icon"><i class="fas fa-award"></i></div>
+        <span class="stat-number">15+</span>
+        <span class="stat-label">Years Experience</span>
+      </div>
+      <div class="stat-card animate-on-scroll">
+        <div class="stat-icon"><i class="fas fa-flask"></i></div>
+        <span class="stat-number">60+</span>
+        <span class="stat-label">Products</span>
+      </div>
+      <div class="stat-card animate-on-scroll">
+        <div class="stat-icon"><i class="fas fa-store"></i></div>
+        <span class="stat-number">500+</span>
+        <span class="stat-label">Dealers</span>
+      </div>
+      <div class="stat-card animate-on-scroll">
+        <div class="stat-icon"><i class="fas fa-users"></i></div>
+        <span class="stat-number">50K+</span>
+        <span class="stat-label">Farmers Served</span>
+      </div>
+      <div class="stat-card animate-on-scroll">
+        <div class="stat-icon"><i class="fas fa-map-marker-alt"></i></div>
+        <span class="stat-number">4</span>
+        <span class="stat-label">Provinces Covered</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MANUFACTURING -->
+<section class="section alt-bg">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag"><i class="fas fa-industry"></i> Our Facilities</span>
+      <h2 class="section-title">State-of-the-Art Manufacturing</h2>
+      <p class="section-subtitle">Precision production facilities ensuring highest quality standards in every batch</p>
+    </div>
+    <div class="manufacturing-grid">
+      <div class="animate-on-scroll">
+        <h3 style="font-size:1.35rem;color:var(--primary);margin-bottom:1rem;">Advanced Production Capabilities</h3>
+        <p style="color:var(--text2);line-height:1.75;margin-bottom:1rem;">Our manufacturing facility is equipped with modern technology for producing various pesticide formulations. Every batch undergoes rigorous quality testing to ensure consistency, efficacy, and safety.</p>
+        <ul class="capabilities-list">
+          <li><i class="fas fa-check-circle"></i><span><strong>SC (Suspension Concentrates)</strong> – Stable, easy-to-use liquid formulations with superior efficacy</span></li>
+          <li><i class="fas fa-check-circle"></i><span><strong>EC (Emulsifiable Concentrates)</strong> – Oil-based solutions for effective pest control</span></li>
+          <li><i class="fas fa-check-circle"></i><span><strong>WG (Water Dispersible Granules)</strong> – Dust-free, easy-to-measure granule formulations</span></li>
+          <li><i class="fas fa-check-circle"></i><span><strong>WP (Wettable Powder)</strong> – Economical and highly effective formulations</span></li>
+          <li><i class="fas fa-check-circle"></i><span><strong>SL & SE Formulations</strong> – Soluble liquids and suspension emulsions for precision delivery</span></li>
+        </ul>
+        <a href="contact.html" class="btn btn-primary" style="margin-top:1.5rem;"><i class="fas fa-envelope"></i> Contact Us</a>
+      </div>
+      <div class="mfg-img animate-on-scroll">
+        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80" alt="Manufacturing Facility" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="nav-logo" style="margin-bottom:.75rem;display:inline-flex;">
+          <div class="nav-logo-icon"><img src="images/Logo/altiga.png" alt="Altiga"></div>
+          <div class="nav-logo-text"><span class="nav-logo-main">Altiga Agri</span><span class="nav-logo-sub">Solutions (Pvt.) Ltd</span></div>
+        </a>
+        <p class="footer-brand-desc">Leading Pakistan's agricultural transformation with innovative, high-quality crop protection solutions. Committed to quality, sustainability, and farmer prosperity.</p>
+        <div class="footer-social">
+          <a href="https://wa.me/923058366461" target="_blank"><i class="fab fa-whatsapp"></i></a>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="crops.html">Crop Solutions</a></li>
+          <li><a href="dealers.html">Dealer Locator</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Products</h4>
+        <ul>
+          <li><a href="products.html?category=insecticides">Insecticides</a></li>
+          <li><a href="products.html?category=fungicides">Fungicides</a></li>
+          <li><a href="products.html?category=weedicides">Weedicides</a></li>
+          <li><a href="products.html?category=fertilizers">Fertilizers</a></li>
+          <li><a href="products.html?category=micronutrients">Micronutrients</a></li>
+          <li><a href="products.html?category=adjuvants">Adjuvants</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Info</h4>
+        <div class="footer-contact-list">
+          <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>Eastern Bypass Industrial Zone Plot No 4, Swat House, Quetta, Balochistan</span></div>
+          <div class="footer-contact-item"><i class="fas fa-phone"></i><span><a href="tel:+923058366461">+92 305 8366461</a></span></div>
+          <div class="footer-contact-item"><i class="fas fa-envelope"></i><span><a href="mailto:altigaagrisolutionsqta@gmail.com">altigaagrisolutionsqta@gmail.com</a></span></div>
+          <div class="footer-contact-item"><i class="fas fa-clock"></i><span>Mon–Sat: 9:00 AM – 6:00 PM</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Altiga Agri Solutions (Pvt.) Ltd. All rights reserved.</p>
+      <div class="footer-bottom-links"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="components.js"></script>
+<script>
+// NAV
+const toggle = document.getElementById('navToggle');
+const menu   = document.getElementById('navMenu');
+toggle.addEventListener('click', () => {
+  menu.classList.toggle('open');
+  toggle.innerHTML = menu.classList.contains('open') ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+});
+document.querySelectorAll('.nav-item.dropdown .nav-link').forEach(link => {
+  link.addEventListener('click', e => {
+    if (window.innerWidth <= 880) { e.preventDefault(); link.closest('.nav-item').classList.toggle('open'); }
+  });
+});
+document.addEventListener('click', e => {
+  if (!e.target.closest('.navbar')) { menu.classList.remove('open'); toggle.innerHTML = '<i class="fas fa-bars"></i>'; }
+});
+
+// SCROLL ANIM
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) { setTimeout(() => entry.target.classList.add('visible'), i * 80); obs.unobserve(entry.target); }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.animate-on-scroll').forEach(el => obs.observe(el));
+
+// MGMT MODAL
+const mgmtData = {
+  ceo: {
+    name: 'Barkat Ali Khan', role: 'Chief Executive Officer – Altiga Agri Solutions',
+    photo: 'images/About Us/CEO.jpg',
+    icon: 'fas fa-user-tie', bg: 'linear-gradient(135deg, #0d2e1a 0%, #1a472a 100%)',
+    bio: 'As the Chief Executive Officer of Altiga Agri Solutions (Pvt.) Ltd., Barkat Ali Khan brings visionary leadership and extensive experience in Pakistan\'s agricultural sector. With a deep understanding of diverse agro-climatic conditions across Balochistan and beyond, he has been instrumental in positioning Altiga as a trusted name among farmers, steering the company toward multinational standards of excellence and innovation.',
+    meta: [{ icon: 'fas fa-industry', label: 'Agri Industry Leader' }, { icon: 'fas fa-map-marker-alt', label: 'Quetta, Balochistan' }, { icon: 'fas fa-trophy', label: 'Strategic Leadership' }]
+  },
+  md: {
+    name: 'Alam Khan', role: 'Managing Director – Altiga Agri Solutions',
+    photo: 'images/About Us/Managing Director.jpg',
+    icon: 'fas fa-briefcase', bg: 'linear-gradient(135deg, #0d1e2e 0%, #1a3047 100%)',
+    bio: 'Alam Khan leads Altiga Agri Solutions\' day-to-day operations and growth strategy as Managing Director. With an extensive background in agribusiness and operational management, he coordinates between sales, production, and research divisions to deliver world-class agrochemical solutions to Pakistani farmers with consistency, reliability, and quality assurance.',
+    meta: [{ icon: 'fas fa-cogs', label: 'Operations Management' }, { icon: 'fas fa-handshake', label: 'Business Development' }, { icon: 'fas fa-globe', label: 'Multinational Standards' }]
+  },
+  finance: {
+    name: 'Fayyaz Khan', role: 'Finance Director – Altiga Agri Solutions',
+    photo: 'images/About Us/Finance Director.jpg',
+    icon: 'fas fa-chart-line', bg: 'linear-gradient(135deg, #1a2e0d 0%, #2d5a1a 100%)',
+    bio: 'Fayyaz Khan oversees all financial operations, strategic investment planning, and fiscal governance at Altiga Agri Solutions as Finance Director. With deep expertise in agricultural economics and corporate finance, he ensures the company\'s financial robustness while fueling expansion initiatives to serve Pakistan\'s farming community at scale.',
+    meta: [{ icon: 'fas fa-coins', label: 'Financial Strategy' }, { icon: 'fas fa-chart-bar', label: 'Corporate Finance' }, { icon: 'fas fa-shield-alt', label: 'Risk Management' }]
+  },
+  sales: {
+    name: 'Farrukh Ali Khan', role: 'Director Sales & Marketing – Altiga Agri Solutions',
+    photo: 'images/About Us/Director Sales.jpg',
+    icon: 'fas fa-chart-line', bg: 'linear-gradient(135deg, #2e1a0d 0%, #472d1a 100%)',
+    bio: 'Farrukh Ali Khan serves as the Director of Sales & Marketing at Altiga Agri Solutions, driving the company\'s market expansion and brand presence across Pakistan. With strong expertise in agricultural markets and customer relationships, he leads the sales team in building lasting partnerships with dealers and farmers while developing innovative marketing strategies that connect Altiga\'s solutions with those who need them most.',
+    meta: [{ icon: 'fas fa-network-wired', label: 'Sales Networks' }, { icon: 'fas fa-bullhorn', label: 'Marketing Strategy' }, { icon: 'fas fa-users', label: 'Customer Relations' }]
+  }
+};
+
+function openMgmt(id) {
+  const d = mgmtData[id];
+  document.getElementById('mgmtModalHeader').style.background = d.bg;
+  const avatarEl = document.getElementById('mgmtModalAvatar');
+  if (d.photo) {
+    avatarEl.innerHTML = `<img src="${d.photo}" alt="${d.name}" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;">`;
+    avatarEl.style.padding = '0';
+    avatarEl.style.overflow = 'hidden';
+  } else {
+    avatarEl.innerHTML = `<i class="${d.icon}"></i>`;
+    avatarEl.style.padding = '';
+  }
+  document.getElementById('mgmtModalName').textContent = d.name;
+  document.getElementById('mgmtModalRole').textContent = d.role;
+  document.getElementById('mgmtModalBio').textContent  = d.bio;
+  document.getElementById('mgmtModalMeta').innerHTML   = d.meta.map(m => `<div class="mgmt-meta-item"><i class="${m.icon}"></i>${m.label}</div>`).join('');
+  document.getElementById('mgmtModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeMgmt() { document.getElementById('mgmtModal').classList.remove('open'); document.body.style.overflow = ''; }
+document.querySelectorAll('.mgmt-card').forEach(c => {
+  c.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); c.click(); } });
+});
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMgmt(); });
+</script>
+
+<!-- MOBILE BOTTOM NAVIGATION -->
+<nav class="mobile-bottom-nav">
+  <div class="mobile-bottom-nav-inner">
+    <a href="index.html" class="mobile-nav-item" data-page="index">
+      <i class="fas fa-home"></i>
+      <span>Home</span>
+    </a>
+    <a href="products.html" class="mobile-nav-item" data-page="products">
+      <i class="fas fa-flask"></i>
+      <span>Products</span>
+    </a>
+    <a href="crops.html" class="mobile-nav-item" data-page="crops">
+      <i class="fas fa-seedling"></i>
+      <span>Crops</span>
+    </a>
+    <a href="dealers.html" class="mobile-nav-item" data-page="dealers">
+      <i class="fas fa-map-marker-alt"></i>
+      <span>Dealers</span>
+    </a>
+    <a href="contact.html" class="mobile-nav-item" data-page="contact">
+      <i class="fas fa-phone"></i>
+      <span>Contact</span>
+    </a>
+  </div>
+</nav>
+
+<script>
+// Mobile bottom nav active state
+(function() {
+  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  const pageName = currentPage.replace('.html', '') || 'index';
+  document.querySelectorAll('.mobile-nav-item').forEach(item => {
+    if (item.dataset.page === pageName) {
+      item.classList.add('active');
+    }
+  });
+})();
+</script>
+
+</body>
+</html>

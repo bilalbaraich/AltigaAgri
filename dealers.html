@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dealer Locator | Altiga Agri Solutions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-icon"><img src="images/Logo/altiga.png" alt="Altiga Logo"></div>
+      <div class="nav-logo-text"><span class="nav-logo-main">Altiga Agri</span><span class="nav-logo-sub">Solutions (Pvt.) Ltd</span></div>
+    </a>
+    <button class="nav-toggle" id="navToggle"><i class="fas fa-bars"></i></button>
+    <ul class="nav-menu" id="navMenu">
+      <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+      <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+      <li class="nav-item dropdown">
+        <a href="products.html" class="nav-link">Products <i class="fas fa-chevron-down chevron"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="products.html?category=insecticides"><i class="fas fa-bug"></i>Insecticides</a></li>
+          <li><a href="products.html?category=fungicides"><i class="fas fa-leaf"></i>Fungicides</a></li>
+          <li><a href="products.html?category=weedicides"><i class="fas fa-seedling"></i>Weedicides</a></li>
+          <li><a href="products.html?category=fertilizers"><i class="fas fa-flask"></i>Fertilizers</a></li>
+          <li><a href="products.html?category=micronutrients"><i class="fas fa-atom"></i>Micronutrients</a></li>
+          <li><a href="products.html?category=adjuvants"><i class="fas fa-vial"></i>Adjuvants</a></li>
+        </ul>
+      </li>
+      <li class="nav-item"><a href="crops.html" class="nav-link">Crop Solutions</a></li>
+      <li class="nav-item"><a href="dealers.html" class="nav-link active">Dealer Locator</a></li>
+      <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="page-header" style="padding:3rem 0 2.5rem;">
+  <div class="page-header-inner">
+    <span class="page-tag">Authorized Network</span>
+    <h1>Find Our Dealers in Balochistan</h1>
+    <p>45 authorized dealers across 27 cities — trusted agrochemical partners in your region</p>
+    <nav class="breadcrumb"><a href="index.html">Home</a> <i class="fas fa-chevron-right"></i> <span>Dealer Locator</span></nav>
+  </div>
+</section>
+
+<!-- MAP MODAL -->
+<div id="mapModal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);z-index:9999;align-items:center;justify-content:center;">
+  <div style="background:#fff;border-radius:16px;width:90%;max-width:800px;height:80vh;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 25px 60px rgba(0,0,0,0.4);">
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:1rem 1.5rem;background:linear-gradient(135deg,#1a472a,#2d5a1a);color:#fff;">
+      <div>
+        <h3 id="mapModalTitle" style="margin:0;font-size:1.1rem;font-weight:700;"></h3>
+        <p id="mapModalCity" style="margin:0;font-size:.85rem;opacity:.85;"></p>
+      </div>
+      <button onclick="closeMapModal()" style="background:rgba(255,255,255,0.2);border:none;color:#fff;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:1.1rem;display:flex;align-items:center;justify-content:center;transition:.2s;" onmouseover="this.style.background='rgba(255,255,255,0.35)'" onmouseout="this.style.background='rgba(255,255,255,0.2)'"><i class="fas fa-times"></i></button>
+    </div>
+    <div id="dealerMap" style="flex:1;width:100%;"></div>
+  </div>
+</div>
+
+<div class="dealer-layout" style="display:block;max-width:1100px;margin:0 auto;padding:1.5rem;">
+  <!-- FULL-WIDTH SIDEBAR -->
+  <div class="dealer-sidebar-panel" style="width:100%;max-width:100%;border-right:none;height:auto;overflow:visible;">
+    <div class="search-field">
+      <input type="text" id="dealerSearch" placeholder="Search by name or city…">
+      <i class="fas fa-search"></i>
+    </div>
+    <div class="city-chips" id="cityChips">
+      <div class="city-chip active" data-city="all">All Cities</div>
+      <div class="city-chip" data-city="quetta">Quetta</div>
+      <div class="city-chip" data-city="khuzdar">Khuzdar</div>
+      <div class="city-chip" data-city="dera-murad-jamali">D. Murad Jamali</div>
+      <div class="city-chip" data-city="sibi">Sibi</div>
+      <div class="city-chip" data-city="hub">Hub</div>
+      <div class="city-chip" data-city="dukki">Dukki</div>
+      <div class="city-chip" data-city="turbat">Turbat</div>
+      <div class="city-chip" data-city="loralai">Loralai</div>
+      <div class="city-chip" data-city="sanjavi">Sanjavi</div>
+      <div class="city-chip" data-city="dera-allahyar">Dera Allahyar</div>
+      <div class="city-chip" data-city="harnai">Harnai</div>
+      <div class="city-chip" data-city="kuchlak">Kuchlak</div>
+      <div class="city-chip" data-city="uthal">Uthal</div>
+      <div class="city-chip" data-city="nall">Nall</div>
+      <div class="city-chip" data-city="lasbela">Lasbela</div>
+      <div class="city-chip" data-city="mastung">Mastung</div>
+      <div class="city-chip" data-city="panjgor">Panjgor</div>
+      <div class="city-chip" data-city="khanozai">Khanozai</div>
+      <div class="city-chip" data-city="qilla-saifullah">Qilla Saifullah</div>
+      <div class="city-chip" data-city="zhob">Zhob</div>
+      <div class="city-chip" data-city="sohbatpur">Sohbatpur</div>
+      <div class="city-chip" data-city="kharan">Kharan</div>
+      <div class="city-chip" data-city="noshki">Noshki</div>
+      <div class="city-chip" data-city="wadh">Wadh</div>
+      <div class="city-chip" data-city="pishin">Pishin</div>
+      <div class="city-chip" data-city="kalat">Kalat</div>
+      <div class="city-chip" data-city="mashkay">Mashkay</div>
+    </div>
+    <div class="dealer-count"><strong id="dealerCount">45</strong> dealers found</div>
+    <div class="dealer-cards" id="dealerCards" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem;max-height:none;overflow:visible;"></div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="nav-logo" style="margin-bottom:.75rem;display:inline-flex;">
+          <div class="nav-logo-icon"><img src="images/Logo/altiga.png" alt="Altiga"></div>
+          <div class="nav-logo-text"><span class="nav-logo-main">Altiga Agri</span><span class="nav-logo-sub">Solutions (Pvt.) Ltd</span></div>
+        </a>
+        <p class="footer-brand-desc">Pakistan's leading crop protection company serving Balochistan farmers with quality products and expert support.</p>
+        <div class="footer-social">
+          <a href="https://wa.me/923058366461" target="_blank"><i class="fab fa-whatsapp"></i></a>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="crops.html">Crop Solutions</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Info</h4>
+        <div class="footer-contact-list">
+          <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>Eastern Bypass Industrial Zone, Quetta, Balochistan</span></div>
+          <div class="footer-contact-item"><i class="fas fa-phone"></i><span><a href="tel:+923058366461">+92 305 8366461</a></span></div>
+          <div class="footer-contact-item"><i class="fas fa-envelope"></i><span><a href="mailto:altigaagrisolutionsqta@gmail.com">altigaagrisolutionsqta@gmail.com</a></span></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Altiga Agri Solutions (Pvt.) Ltd. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="components.js"></script>
+<script>
+// NAV
+const toggle = document.getElementById('navToggle');
+const menu   = document.getElementById('navMenu');
+toggle.addEventListener('click', () => {
+  menu.classList.toggle('open');
+  toggle.innerHTML = menu.classList.contains('open') ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+});
+document.querySelectorAll('.nav-item.dropdown .nav-link').forEach(link => {
+  link.addEventListener('click', e => {
+    if (window.innerWidth <= 880) { e.preventDefault(); link.closest('.nav-item').classList.toggle('open'); }
+  });
+});
+document.addEventListener('click', e => {
+  if (!e.target.closest('.navbar')) { menu.classList.remove('open'); toggle.innerHTML = '<i class="fas fa-bars"></i>'; }
+});
+
+const dealersData = [
+  {id:1,name:"Abbas Zarai Markaz",city:"khuzdar",cityName:"Khuzdar",phone:"+92 3458933046",lat:27.812,lng:66.6113},
+  {id:2,name:"Sada Bahar Zarai Markaz",city:"khuzdar",cityName:"Khuzdar",phone:"+92 3337952915",lat:27.815,lng:66.613},
+  {id:3,name:"Wazir Cropcare",city:"khuzdar",cityName:"Khuzdar",phone:"+92 3154241172",lat:27.810,lng:66.610},
+  {id:4,name:"Khizer Brothers Zarai Markaz",city:"quetta",cityName:"Quetta",phone:"+92 3331465984",lat:30.1798,lng:66.975},
+  {id:5,name:"Salman Zarai Markaz",city:"quetta",cityName:"Quetta",phone:"+92 3445378326",lat:30.182,lng:66.978},
+  {id:6,name:"Shams Agro Chemicals",city:"quetta",cityName:"Quetta",phone:"+92 3327878584",lat:30.185,lng:66.98},
+  {id:7,name:"Zakir Hussain & Brothers",city:"quetta",cityName:"Quetta",phone:"+92 3218003666",lat:30.176,lng:66.972},
+  {id:8,name:"Al Farooq Zarai Markaz",city:"dera-murad-jamali",cityName:"Dera Murad Jamali",phone:"+92 3009386113",lat:29.5,lng:68.1},
+  {id:9,name:"Mengal Zarai Markaz",city:"dera-murad-jamali",cityName:"Dera Murad Jamali",phone:"+92 3111503353",lat:29.502,lng:68.102},
+  {id:10,name:"Mustung Zarai Markaz",city:"dera-murad-jamali",cityName:"Dera Murad Jamali",phone:"+92 3330371273",lat:29.498,lng:68.098},
+  {id:11,name:"Sadaqat Zarai Markaz",city:"dera-murad-jamali",cityName:"Dera Murad Jamali",phone:"+92 3342063186",lat:29.504,lng:68.104},
+  {id:12,name:"Hasil Zarai Markaz",city:"dukki",cityName:"Dukki",phone:"+92 3118336814",lat:30.1534,lng:68.5278},
+  {id:13,name:"Rehan Zarai Markaz",city:"dukki",cityName:"Dukki",phone:"+92 3351162161",lat:30.155,lng:68.5295},
+  {id:14,name:"Zakir Hussain and Master Zarai Markaz",city:"dukki",cityName:"Dukki",phone:"+92 3327982196",lat:30.152,lng:68.526},
+  {id:15,name:"Arsalan Zarai Markaz",city:"hub",cityName:"Hub",phone:"+92 3342229199",lat:25.374,lng:67.04},
+  {id:16,name:"Miras Zarai Markaz",city:"hub",cityName:"Hub",phone:"+92 3362102686",lat:25.376,lng:67.042},
+  {id:17,name:"Shainsha Zarai Markaz",city:"hub",cityName:"Hub",phone:"+92 3152615536",lat:25.372,lng:67.038},
+  {id:18,name:"Ajwa Agro Services",city:"sibi",cityName:"Sibi",phone:"+92 3337818864",lat:29.5435,lng:67.8776},
+  {id:19,name:"Al Madina Zarai Markaz",city:"sibi",cityName:"Sibi",phone:"+92 3330381203",lat:29.545,lng:67.879},
+  {id:20,name:"Sattar Zarai Markaz",city:"sibi",cityName:"Sibi",phone:"+92 3033845326",lat:29.542,lng:67.876},
+  {id:21,name:"Abdul Sattar Zarai Markaz",city:"turbat",cityName:"Turbat",phone:"+92 3322175231",lat:26.0001,lng:63.0417},
+  {id:22,name:"Ahmed Ullah Zarai Markaz",city:"sanjavi",cityName:"Sanjavi",phone:"+92 3337783016",lat:30.78,lng:68.5},
+  {id:23,name:"Smallen Zarai Markaz",city:"sanjavi",cityName:"Sanjavi",phone:"+92 3337783016",lat:30.782,lng:68.502},
+  {id:24,name:"Al Hussaini Zarai Markaz",city:"dera-allahyar",cityName:"Dera Allahyar",phone:"+92 3473756636",lat:29.25,lng:68.35},
+  {id:25,name:"Zeeshan Zarai Markaz",city:"dera-allahyar",cityName:"Dera Allahyar",phone:"+92 3455498441",lat:29.252,lng:68.352},
+  {id:26,name:"Al Nizam Zarai Markaz",city:"harnai",cityName:"Harnai",phone:"+92 3003887139",lat:30.1,lng:67.93},
+  {id:27,name:"Al-Hafiz Zarai Markaz",city:"kuchlak",cityName:"Kuchlak",phone:"+92 3128382595",lat:30.54,lng:66.99},
+  {id:28,name:"Altiga Agri Solutions",city:"uthal",cityName:"Uthal",phone:"+92 3098002925",lat:25.81,lng:66.62},
+  {id:29,name:"Arbab Bazgar Zarai Markaz",city:"nall",cityName:"Nall",phone:"+92 3193500796",lat:27.75,lng:65.95},
+  {id:30,name:"Atta-Aziz Zarai Markaz",city:"loralai",cityName:"Loralai",phone:"+92 3133000036",lat:30.3716,lng:68.5907},
+  {id:31,name:"Balochistan Zarai Markaz Lasbela",city:"lasbela",cityName:"Lasbela",phone:"+92 3062208880",lat:26.3,lng:66.65},
+  {id:32,name:"Master Zarai Markaz",city:"lasbela",cityName:"Lasbela",phone:"+92 3072543404",lat:26.302,lng:66.652},
+  {id:33,name:"Bangalzai Traders",city:"mastung",cityName:"Mastung",phone:"+92 3337964942",lat:29.793,lng:66.845},
+  {id:34,name:"Caravan Kishawarzi Zarai Markaz",city:"panjgor",cityName:"Panjgor",phone:"+92 3327867566",lat:26.9685,lng:64.099},
+  {id:35,name:"Hassan Zarai Markaz",city:"khanozai",cityName:"Khanozai",phone:"+92 3003901074",lat:30.45,lng:67.3},
+  {id:36,name:"Khaisor Zarai Markaz",city:"qilla-saifullah",cityName:"Qilla Saifullah",phone:"+92 3337711482",lat:30.7,lng:68.35},
+  {id:37,name:"Pamir Zarai Markaz",city:"qilla-saifullah",cityName:"Qilla Saifullah",phone:"+92 3178008600",lat:30.702,lng:68.352},
+  {id:38,name:"Kissan Zarai Markaz",city:"zhob",cityName:"Zhob",phone:"+92 3454177337",lat:31.3412,lng:69.4481},
+  {id:39,name:"Nazir Zarai Markaz",city:"sohbatpur",cityName:"Sohbatpur",phone:"+92 3027528570",lat:28.45,lng:68.0},
+  {id:40,name:"PestTech Solutions",city:"kharan",cityName:"Kharan",phone:"+92 3128492093",lat:27.653,lng:65.42},
+  {id:41,name:"Sameer Fertilizer & Zarai Markaz",city:"noshki",cityName:"Noshki",phone:"+92 3400806609",lat:27.35,lng:65.9},
+  {id:42,name:"Suban Agriculture Store",city:"wadh",cityName:"Wadh",phone:"+92 3337990580",lat:27.05,lng:66.65},
+  {id:43,name:"Yaqoob Agha Zarai Markaz",city:"pishin",cityName:"Pishin",phone:"+92 3003878131",lat:30.576,lng:67.0005},
+  {id:44,name:"Zohaib Zarai Markaz",city:"kalat",cityName:"Kalat",phone:"+92 3342441714",lat:29.02,lng:66.59},
+  {id:45,name:"Balochistan Zarai Markaz Mashkay",city:"mashkay",cityName:"Mashkay",phone:"N/A",lat:27.0,lng:65.5}
+];
+
+let map, markers = [], activeId = null, mapInitialized = false;
+
+document.addEventListener('DOMContentLoaded', () => {
+  renderDealers(dealersData);
+  setupEvents();
+  // Close modal on backdrop click
+  document.getElementById('mapModal').addEventListener('click', function(e) {
+    if (e.target === this) closeMapModal();
+  });
+});
+
+function initMap() {
+  if (mapInitialized) return;
+  map = L.map('dealerMap').setView([29.5, 66.5], 7);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '&copy; OpenStreetMap contributors' }).addTo(map);
+  dealersData.forEach(d => {
+    const m = L.marker([d.lat, d.lng]).addTo(map);
+    m.bindPopup(`<div style="font-family:Inter,sans-serif;min-width:180px;">
+      <strong style="color:#1a472a;font-size:.95rem;">${d.name}</strong><br>
+      <span style="color:#666;font-size:.82rem;"><i class="fas fa-map-marker-alt"></i> ${d.cityName}</span><br>
+      <span style="color:#666;font-size:.82rem;"><i class="fas fa-phone"></i> ${d.phone}</span>
+    </div>`);
+    m.dealerId = d.id;
+    markers.push(m);
+  });
+  mapInitialized = true;
+}
+
+function openMapModal(id) {
+  const d = dealersData.find(x => x.id === id);
+  if (!d) return;
+  const modal = document.getElementById('mapModal');
+  modal.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+  document.getElementById('mapModalTitle').textContent = d.name;
+  document.getElementById('mapModalCity').textContent = d.cityName;
+  // Init map after modal is visible
+  setTimeout(() => {
+    initMap();
+    map.invalidateSize();
+    const m = markers.find(mk => mk.dealerId === id);
+    if (m) { map.setView(m.getLatLng(), 13); m.openPopup(); }
+  }, 100);
+  activeId = id;
+}
+
+function closeMapModal() {
+  document.getElementById('mapModal').style.display = 'none';
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMapModal(); });
+
+function renderDealers(list) {
+  document.getElementById('dealerCount').textContent = list.length;
+  const el = document.getElementById('dealerCards');
+  if (!list.length) { el.innerHTML = '<div class="no-dealers"><i class="fas fa-search"></i><p>No dealers found.</p></div>'; return; }
+  el.innerHTML = list.map(d => `
+    <div class="dealer-card${d.id===activeId?' active':''}" data-id="${d.id}">
+      <div class="dealer-name">${d.name}</div>
+      <span class="dealer-city-tag"><i class="fas fa-map-marker-alt"></i> ${d.cityName}</span>
+      <div class="dealer-row"><i class="fas fa-phone"></i>${d.phone}</div>
+      <div class="dealer-btns">
+        ${d.phone !== 'N/A'
+          ? `<a href="tel:${d.phone.replace(/\s/g,'')}" class="dealer-btn call"><i class="fas fa-phone"></i> Call</a>`
+          : `<span class="dealer-btn disabled"><i class="fas fa-phone"></i> No Phone</span>`}
+        <button class="dealer-btn map-btn" onclick="viewOnMap(${d.id})"><i class="fas fa-map-marked-alt"></i> View Map</button>
+      </div>
+    </div>
+  `).join('');
+}
+
+function viewOnMap(id) {
+  openMapModal(id);
+}
+
+function setupEvents() {
+  document.getElementById('dealerSearch').addEventListener('input', filterDealers);
+  document.querySelectorAll('.city-chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      document.querySelectorAll('.city-chip').forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      filterDealers();
+    });
+  });
+}
+
+function filterDealers() {
+  const term = document.getElementById('dealerSearch').value.toLowerCase();
+  const city = document.querySelector('.city-chip.active').dataset.city;
+  const res = dealersData.filter(d => {
+    const matchSearch = !term || d.name.toLowerCase().includes(term) || d.cityName.toLowerCase().includes(term);
+    const matchCity   = city === 'all' || d.city === city;
+    return matchSearch && matchCity;
+  });
+  renderDealers(res);
+}
+</script>
+
+<!-- MOBILE BOTTOM NAVIGATION -->
+<nav class="mobile-bottom-nav">
+  <div class="mobile-bottom-nav-inner">
+    <a href="index.html" class="mobile-nav-item" data-page="index">
+      <i class="fas fa-home"></i>
+      <span>Home</span>
+    </a>
+    <a href="products.html" class="mobile-nav-item" data-page="products">
+      <i class="fas fa-flask"></i>
+      <span>Products</span>
+    </a>
+    <a href="crops.html" class="mobile-nav-item" data-page="crops">
+      <i class="fas fa-seedling"></i>
+      <span>Crops</span>
+    </a>
+    <a href="dealers.html" class="mobile-nav-item" data-page="dealers">
+      <i class="fas fa-map-marker-alt"></i>
+      <span>Dealers</span>
+    </a>
+    <a href="contact.html" class="mobile-nav-item" data-page="contact">
+      <i class="fas fa-phone"></i>
+      <span>Contact</span>
+    </a>
+  </div>
+</nav>
+
+<script>
+// Mobile bottom nav active state
+(function() {
+  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  const pageName = currentPage.replace('.html', '') || 'index';
+  document.querySelectorAll('.mobile-nav-item').forEach(item => {
+    if (item.dataset.page === pageName) {
+      item.classList.add('active');
+    }
+  });
+})();
+</script>
+
+</body>
+</html>

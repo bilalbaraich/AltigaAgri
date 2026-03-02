@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Products | Altiga Agri Solutions</title>
+  <meta name="description" content="Explore our complete catalog of crop protection solutions — insecticides, fungicides, weedicides, fertilizers, micronutrients and adjuvants.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-icon"><img src="images/Logo/altiga.png" alt="Altiga Logo"></div>
+      <div class="nav-logo-text"><span class="nav-logo-main">Altiga Agri</span><span class="nav-logo-sub">Solutions (Pvt.) Ltd</span></div>
+    </a>
+    <button class="nav-toggle" id="navToggle"><i class="fas fa-bars"></i></button>
+    <ul class="nav-menu" id="navMenu">
+      <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+      <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+      <li class="nav-item dropdown">
+        <a href="products.html" class="nav-link active">Products <i class="fas fa-chevron-down chevron"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="products.html?category=insecticides"><i class="fas fa-bug"></i>Insecticides</a></li>
+          <li><a href="products.html?category=fungicides"><i class="fas fa-leaf"></i>Fungicides</a></li>
+          <li><a href="products.html?category=weedicides"><i class="fas fa-seedling"></i>Weedicides</a></li>
+          <li><a href="products.html?category=fertilizers"><i class="fas fa-flask"></i>Fertilizers</a></li>
+          <li><a href="products.html?category=micronutrients"><i class="fas fa-atom"></i>Micronutrients</a></li>
+          <li><a href="products.html?category=adjuvants"><i class="fas fa-vial"></i>Adjuvants</a></li>
+        </ul>
+      </li>
+      <li class="nav-item"><a href="crops.html" class="nav-link">Crop Solutions</a></li>
+      <li class="nav-item"><a href="dealers.html" class="nav-link">Dealer Locator</a></li>
+      <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<section class="page-header">
+  <div class="page-header-inner">
+    <span class="page-tag">Complete Catalog</span>
+    <h1>Our Product Range</h1>
+    <p>From insecticides to biostimulants — a comprehensive range engineered for Pakistan's crops</p>
+    <nav class="breadcrumb"><a href="index.html">Home</a> <i class="fas fa-chevron-right"></i> <span>Products</span></nav>
+  </div>
+</section>
+
+<!-- PRODUCTS SECTION -->
+<section class="section">
+  <div class="container">
+    <div class="products-layout">
+      <!-- Sidebar -->
+      <aside class="products-sidebar">
+        <div class="filter-widget">
+          <h3><i class="fas fa-filter" style="color:var(--primary-light);margin-right:.4rem;"></i>Categories</h3>
+          <ul class="cat-list">
+            <li><a href="#" class="cat-link active" data-category="all"><span>All Products</span><span class="cat-count" id="count-all">0</span></a></li>
+            <li><a href="#" class="cat-link" data-category="insecticides"><span><i class="fas fa-bug" style="width:16px;color:var(--primary-light);"></i> Insecticides</span><span class="cat-count" id="count-insecticides">0</span></a></li>
+            <li><a href="#" class="cat-link" data-category="fungicides"><span><i class="fas fa-leaf" style="width:16px;color:var(--primary-light);"></i> Fungicides</span><span class="cat-count" id="count-fungicides">0</span></a></li>
+            <li><a href="#" class="cat-link" data-category="weedicides"><span><i class="fas fa-seedling" style="width:16px;color:var(--primary-light);"></i> Weedicides</span><span class="cat-count" id="count-weedicides">0</span></a></li>
+            <li><a href="#" class="cat-link" data-category="fertilizers"><span><i class="fas fa-flask" style="width:16px;color:var(--primary-light);"></i> Fertilizers</span><span class="cat-count" id="count-fertilizers">0</span></a></li>
+            <li><a href="#" class="cat-link" data-category="micronutrients"><span><i class="fas fa-atom" style="width:16px;color:var(--primary-light);"></i> Micronutrients</span><span class="cat-count" id="count-micronutrients">0</span></a></li>
+            <li><a href="#" class="cat-link" data-category="adjuvants"><span><i class="fas fa-vial" style="width:16px;color:var(--primary-light);"></i> Adjuvants</span><span class="cat-count" id="count-adjuvants">0</span></a></li>
+          </ul>
+        </div>
+        <div class="filter-widget">
+          <h3><i class="fas fa-headset" style="color:var(--primary-light);margin-right:.4rem;"></i>Need Help?</h3>
+          <div class="help-box">
+            <i class="fas fa-phone-alt"></i>
+            <p>Our agricultural experts are ready to help you choose the right products for your crops.</p>
+            <a href="contact.html" class="btn btn-outline btn-sm">Contact Expert</a>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Main Grid -->
+      <div>
+        <div class="products-toolbar">
+          <div class="toolbar-info">Showing <strong id="showingCount">0</strong> of <strong id="totalCount">0</strong> products</div>
+          <div class="toolbar-sort">
+            <label>Sort:</label>
+            <select id="sortSelect">
+              <option value="featured">Featured</option>
+              <option value="name-asc">Name: A–Z</option>
+              <option value="name-desc">Name: Z–A</option>
+              <option value="category">Category</option>
+            </select>
+          </div>
+        </div>
+        <div class="products-grid" id="productsGrid"></div>
+        <div id="noResults" class="no-results" style="display:none;">
+          <i class="fas fa-search"></i>
+          <p>No products found. Try a different category.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCT MODAL -->
+<div class="modal-overlay" id="productModal">
+  <div class="modal-box">
+    <div class="modal-close-row">
+      <button class="modal-close-btn" id="modalCloseBtn"><i class="fas fa-times"></i></button>
+    </div>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="nav-logo" style="margin-bottom:.75rem;display:inline-flex;">
+          <div class="nav-logo-icon"><img src="images/Logo/altiga.png" alt="Altiga"></div>
+          <div class="nav-logo-text"><span class="nav-logo-main">Altiga Agri</span><span class="nav-logo-sub">Solutions (Pvt.) Ltd</span></div>
+        </a>
+        <p class="footer-brand-desc">Leading Pakistan's agricultural transformation with innovative, high-quality crop protection solutions.</p>
+        <div class="footer-social">
+          <a href="https://wa.me/923058366461" target="_blank"><i class="fab fa-whatsapp"></i></a>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="crops.html">Crop Solutions</a></li>
+          <li><a href="dealers.html">Dealer Locator</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Products</h4>
+        <ul>
+          <li><a href="products.html?category=insecticides">Insecticides</a></li>
+          <li><a href="products.html?category=fungicides">Fungicides</a></li>
+          <li><a href="products.html?category=weedicides">Weedicides</a></li>
+          <li><a href="products.html?category=fertilizers">Fertilizers</a></li>
+          <li><a href="products.html?category=micronutrients">Micronutrients</a></li>
+          <li><a href="products.html?category=adjuvants">Adjuvants</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Info</h4>
+        <div class="footer-contact-list">
+          <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>Eastern Bypass Industrial Zone, Quetta, Balochistan</span></div>
+          <div class="footer-contact-item"><i class="fas fa-phone"></i><span><a href="tel:+923058366461">+92 305 8366461</a></span></div>
+          <div class="footer-contact-item"><i class="fas fa-envelope"></i><span><a href="mailto:altigaagrisolutionsqta@gmail.com">altigaagrisolutionsqta@gmail.com</a></span></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Altiga Agri Solutions (Pvt.) Ltd. All rights reserved.</p>
+      <div class="footer-bottom-links"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="product_database.js"></script>
+<script src="components.js"></script>
+<script>
+// ── NAV INIT ──
+const toggle = document.getElementById('navToggle');
+const menu   = document.getElementById('navMenu');
+toggle.addEventListener('click', () => {
+  menu.classList.toggle('open');
+  toggle.innerHTML = menu.classList.contains('open') ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+});
+document.querySelectorAll('.nav-item.dropdown .nav-link').forEach(link => {
+  link.addEventListener('click', e => {
+    if (window.innerWidth <= 880) { e.preventDefault(); link.closest('.nav-item').classList.toggle('open'); }
+  });
+});
+document.addEventListener('click', e => {
+  if (!e.target.closest('.navbar')) { menu.classList.remove('open'); toggle.innerHTML = '<i class="fas fa-bars"></i>'; }
+});
+
+// ── PRODUCTS LOGIC ──
+let allProducts = [];
+let filtered = [];
+let currentCategory = 'all';
+
+document.addEventListener('DOMContentLoaded', () => {
+  if (typeof productDatabase === 'undefined') return;
+
+  // Flatten
+  Object.keys(productDatabase).forEach(cat => {
+    if (Array.isArray(productDatabase[cat])) {
+      productDatabase[cat].forEach(p => { p.category = cat; allProducts.push(p); });
+    }
+  });
+
+  // Counts
+  document.getElementById('count-all').textContent = allProducts.length;
+  Object.keys(productDatabase).forEach(cat => {
+    const el = document.getElementById('count-' + cat);
+    if (el) el.textContent = Array.isArray(productDatabase[cat]) ? productDatabase[cat].length : 0;
+  });
+
+  // URL param
+  const urlCat = new URLSearchParams(window.location.search).get('category');
+  if (urlCat) {
+    currentCategory = urlCat;
+    document.querySelectorAll('.cat-link').forEach(l => l.classList.remove('active'));
+    const target = document.querySelector(`.cat-link[data-category="${urlCat}"]`);
+    if (target) target.classList.add('active');
+  }
+
+  // Events
+  document.querySelectorAll('.cat-link').forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      document.querySelectorAll('.cat-link').forEach(l => l.classList.remove('active'));
+      link.classList.add('active');
+      currentCategory = link.dataset.category;
+      applyFilters();
+    });
+  });
+
+  document.getElementById('sortSelect').addEventListener('change', () => {
+    sortProducts(document.getElementById('sortSelect').value);
+    renderProducts(filtered);
+  });
+
+  applyFilters();
+});
+
+function applyFilters() {
+  filtered = currentCategory === 'all' ? [...allProducts] : allProducts.filter(p => p.category === currentCategory);
+  renderProducts(filtered);
+}
+
+function sortProducts(type) {
+  if (type === 'name-asc')  filtered.sort((a,b) => a.name.localeCompare(b.name));
+  if (type === 'name-desc') filtered.sort((a,b) => b.name.localeCompare(a.name));
+  if (type === 'category')  filtered.sort((a,b) => a.category.localeCompare(b.category));
+}
+
+function renderProducts(products) {
+  const grid = document.getElementById('productsGrid');
+  const none = document.getElementById('noResults');
+  document.getElementById('showingCount').textContent = products.length;
+  document.getElementById('totalCount').textContent   = allProducts.length;
+
+  if (!products.length) { grid.innerHTML = ''; none.style.display = 'block'; return; }
+  none.style.display = 'none';
+
+  grid.innerHTML = products.map(p => `
+    <div class="product-card" onclick="openModal(${p.id},'${p.category}')">
+      <span class="product-card-badge">${p.badge || 'Product'}</span>
+      <div class="product-card-img">
+        <img src="${p.image}" alt="${p.name}" loading="lazy" onerror="this.src='https://via.placeholder.com/400x300?text=${encodeURIComponent(p.name)}'">
+        <div class="product-card-img-overlay">
+          <button class="quick-view"><i class="fas fa-eye"></i> Quick View</button>
+        </div>
+      </div>
+      <div class="product-card-body">
+        <span class="product-card-cat">${p.category}</span>
+        <h3 class="product-card-name">${p.name}</h3>
+        <p class="product-card-tech">${p.technical}</p>
+        <p class="product-card-desc">${p.description.substring(0,90)}…</p>
+      </div>
+      <div class="product-card-footer">
+        <span class="product-card-formulation">${Array.isArray(p.formulation) ? p.formulation[0] : p.formulation}</span>
+        <button class="product-card-view">Details <i class="fas fa-arrow-right"></i></button>
+      </div>
+    </div>
+  `).join('');
+}
+
+// ── MODAL ──
+function openModal(id, category) {
+  const p = allProducts.find(x => x.id == id && x.category === category);
+  if (!p) return;
+  const packSize    = Array.isArray(p.packSize)    ? p.packSize.join(', ')    : p.packSize;
+  const formulation = Array.isArray(p.formulation) ? p.formulation.join(', ') : p.formulation;
+  const cropsHTML   = (p.crops||[]).map(c => `<span class="tag tag-green">${c}</span>`).join('');
+  const pestsHTML   = (p.pests||[]).map(x => `<span class="tag tag-red">${x}</span>`).join('');
+
+  document.getElementById('modalContent').innerHTML = `
+    <div class="modal-header-section">
+      <div class="modal-img">
+        <img src="${p.image}" alt="${p.name}" onerror="this.src='https://via.placeholder.com/400x300?text=${encodeURIComponent(p.name)}'">
+      </div>
+      <div class="modal-header-info">
+        <span class="modal-badge">${p.badge || 'Product'}</span>
+        <h2 class="modal-product-name">${p.name}</h2>
+        <p class="modal-technical">${p.technical}</p>
+        <div class="modal-quick-info">
+          <span><i class="fas fa-tag"></i>${p.category.charAt(0).toUpperCase()+p.category.slice(1)}</span>
+          <span><i class="fas fa-box"></i>${packSize}</span>
+        </div>
+      </div>
+    </div>
+    <div class="modal-body-content">
+      <div class="modal-tabs">
+        <button class="modal-tab active" onclick="switchTab(this,'tab-overview')">Overview</button>
+        <button class="modal-tab" onclick="switchTab(this,'tab-usage')">Usage & Dosage</button>
+        <button class="modal-tab" onclick="switchTab(this,'tab-safety')">Safety</button>
+      </div>
+      <div id="tab-overview" class="modal-tab-panel active">
+        <p style="color:var(--text2);line-height:1.75;margin-bottom:1.25rem;">${p.description}</p>
+        <div class="modal-info-grid">
+          <div class="modal-info-card">
+            <div class="modal-info-card-title"><i class="fas fa-leaf"></i> Target Crops</div>
+            <div class="modal-tags">${cropsHTML}</div>
+          </div>
+          <div class="modal-info-card">
+            <div class="modal-info-card-title"><i class="fas fa-bug"></i> Controls</div>
+            <div class="modal-tags">${pestsHTML}</div>
+          </div>
+        </div>
+        <div class="modal-row"><strong>Formulation:</strong><span>${formulation}</span></div>
+        <div class="modal-row"><strong>Pack Size:</strong><span>${packSize}</span></div>
+      </div>
+      <div id="tab-usage" class="modal-tab-panel">
+        <div class="modal-row"><strong>Application Rate:</strong><span>${p.application}</span></div>
+        <div class="modal-row"><strong>Dosage:</strong><span>${p.dosage}</span></div>
+        <div class="modal-row"><strong>Per Carton:</strong><span>${Array.isArray(p.packPerCarton) ? p.packPerCarton.join(', ') : p.packPerCarton}</span></div>
+      </div>
+      <div id="tab-safety" class="modal-tab-panel">
+        <div class="safety-box"><i class="fas fa-exclamation-triangle"></i><span>${p.safety}</span></div>
+      </div>
+    </div>
+  `;
+  document.getElementById('productModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function switchTab(btn, tabId) {
+  document.querySelectorAll('.modal-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.modal-tab-panel').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById(tabId).classList.add('active');
+}
+
+document.getElementById('modalCloseBtn').addEventListener('click', () => closeModal());
+document.getElementById('productModal').addEventListener('click', e => { if (e.target === document.getElementById('productModal')) closeModal(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+function closeModal() { document.getElementById('productModal').classList.remove('active'); document.body.style.overflow = ''; }
+</script>
+
+<!-- MOBILE BOTTOM NAVIGATION -->
+<nav class="mobile-bottom-nav">
+  <div class="mobile-bottom-nav-inner">
+    <a href="index.html" class="mobile-nav-item" data-page="index">
+      <i class="fas fa-home"></i>
+      <span>Home</span>
+    </a>
+    <a href="products.html" class="mobile-nav-item" data-page="products">
+      <i class="fas fa-flask"></i>
+      <span>Products</span>
+    </a>
+    <a href="crops.html" class="mobile-nav-item" data-page="crops">
+      <i class="fas fa-seedling"></i>
+      <span>Crops</span>
+    </a>
+    <a href="dealers.html" class="mobile-nav-item" data-page="dealers">
+      <i class="fas fa-map-marker-alt"></i>
+      <span>Dealers</span>
+    </a>
+    <a href="contact.html" class="mobile-nav-item" data-page="contact">
+      <i class="fas fa-phone"></i>
+      <span>Contact</span>
+    </a>
+  </div>
+</nav>
+
+<script>
+// Mobile bottom nav active state
+(function() {
+  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  const pageName = currentPage.replace('.html', '') || 'index';
+  document.querySelectorAll('.mobile-nav-item').forEach(item => {
+    if (item.dataset.page === pageName) {
+      item.classList.add('active');
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
